@@ -1,6 +1,19 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Inter&family=Mali&family=Poppins&display=swap');
 
+  .flex-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .flex-item-left{
+    flex: 50%;
+  }
+
+  .flex-item-right{
+    flex: 50%;
+  }
+
   .title{
     width: 350px;
     height: 50px;
@@ -36,4 +49,11 @@ img{
  position: absolute;
  z-index: 1000;
  display: flex;
+}
+
+/*Responsive layout*/
+@media(max-width: 800px){
+  .flex-item-left, .flex-item-right{
+    flex: 100%;
+  }
 }
