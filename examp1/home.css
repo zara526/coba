@@ -1,6 +1,10 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Inter&family=Mali&family=Poppins&display=swap');
 
+  *{
+    box-sizing: border-box;
+  }
+
   .flex-container{
     display: flex;
     flex-wrap: wrap;
@@ -14,18 +18,19 @@
     flex: 50%;
   }
 
-  .title{
-    width: 350px;
-    height: 50px;
+ .title{
+    width: 276px;
+    height: 88px;
     color: #000;
     font-family: Inter;
     font-size: 50px;
     font-style: normal;
     font-weight: 700;
-    line-height: 60px; /* 43.7px */
+    line-height: 60px; 
     letter-spacing: -0.722px;
     top: 300px;
     margin-left: 855px;
+    float:left;
 }
 
 .content{
@@ -38,22 +43,37 @@
     font-weight: 400;
     line-height: 20px;
     letter-spacing: -0.1px;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 855px;
 }
 
 img{
  width: 600px;
- height: 600px ;
+ height: 655px;
+ flex-shrink: 0;
  top: 0;
  position: absolute;
  z-index: 1000;
- display: flex;
 }
 
-/*Responsive layout*/
-@media(max-width: 800px){
+@media (max-width: 1920px) {
   .flex-item-left, .flex-item-right{
     flex: 100%;
+  }
+  .title{
+    width: 50%;
+    font-size: 38px;
+    margin-left: 580px;
+  }
+
+  .content{
+    width: 50%;
+    font-size: 15px;
+    margin-left: 580px;
+  }
+
+  img{
+    width: 450px;
+    height: 570px;
   }
 }
