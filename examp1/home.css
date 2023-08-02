@@ -102,6 +102,8 @@ img{
 }
 
 h2{
+  display:flex;
+  flex-direction: row;
 width: 207px;
 top: 50px;
 color: #18a0fb;
@@ -121,6 +123,7 @@ margin-top: 165px;
   flex-direction: row;
   padding-top: 80px;
   justify-content: center;
+
 }
 
 .fuschia1{
@@ -169,4 +172,16 @@ margin-top: 165px;
   border-radius: 3px;
   margin-right: 10px;
   background-color: #a5a6f6;
+}
+
+a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: white;
+  background-color: #7879f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
 }
