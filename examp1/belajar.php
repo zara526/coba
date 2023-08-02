@@ -63,7 +63,7 @@ for($i = 1;$i<20;$i++){
         continue;
     }else{
         if($i == 13){
-            echo "Ini katanya $i angka keramat skip ae lah</br>";
+            echo "Ini katanya $i angka keramat skip ae lah </br>";
         }
     }
     echo "Nilai i : $i</br>";
