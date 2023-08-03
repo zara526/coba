@@ -9,16 +9,28 @@ while ($i <= 10){
 echo  "</br>=======================</br>";
 
 echo "Menampilkan Bilangan Genap</br>";
-for($i = 2; $i <=20; $i+=2){
+for($i = 1; $i <=30; $i++){
+    if ($i % 2 === 0){
     echo $i . " ";
+    }
 }
 
 echo  "</br>=======================</br>";
 echo "Menampilkan Bilangan Ganjil</br>";
 
+echo "Cara 1 : ";
 $bil_ganjil = [1, 3, 5, 7, 9, 11, 13, 15];
 foreach($bil_ganjil as $value){
     echo $value . " ";
+}
+
+echo "</br>";
+//cara 2
+echo "Cara 2 : ";
+for($a = 1;$a <= 15; $a++){
+    if( $a % 2 === 1){
+        echo $a . " ";
+    }
 }
 
 echo  "</br>=======================</br>";
