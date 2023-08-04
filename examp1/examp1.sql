@@ -91,6 +91,18 @@ INSERT INTO `penjualan` (`kode_brg`, `id_pem`, `tgl_beli`, `jml_beli`) VALUES
 ('K1', 'B01', '2023-08-04 06:03:16', 3);
 COMMIT;
 
+-- Indeks untuk tabel 'barang'
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`kode_brg`);
+
+--
+--
+--
+
+-- Indeks untuk tabel 'pembeli'
+ALTER TABLE `pembeli`
+  ADD PRIMARY KEY (`id_pem`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
