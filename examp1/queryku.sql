@@ -86,3 +86,18 @@ CREATE VIEW VJoin AS SELECT barang.kode_brg, barang.nama, penjualan.id_pem, penj
  
  CREATE DEFINER=`root`@`localhost` TRIGGER `beli` AFTER INSERT ON `penjualan` FOR EACH ROW BEGIN UPDATE barang SET stok = stok - NEW.jml_beli WHERE kode_brg = NEW.kode_brg; END
 CREATE DEFINER=`root`@`localhost` TRIGGER `delete-barang` AFTER DELETE ON `barang` FOR EACH ROW BEGIN DELETE FROM penjualan WHERE kode_brg = old.kode_brg; END
+
+-- STORED PROCEDURE
+DELIMITER $$
+CREATE PROCEDURE getAddress()
+BEGIN
+    SELECT * FROM pembeli WHERE alamat = 'Jl. Ciganjur, Kota Jakarta';
+END$$
+--sintaks untuk memanggil
+CALL getAddress(); 
+
+--Stored Function
+CREATE FUNCTION getStatus ( harga float(10.2) ) RETURNS VARCHAR(10) DETERMINISTIC BEGIN DECLARE status VARCHAR(10); IF harga<50000 THEN SET status = 'Murah'; ELSEIF harga>=50000 AND harga<75000 THEN SET status = 'Sedang'; ELSE SET status = 'Mahal'; END IF; RETURN(status); END;
+
+--sintaks untuk memanggil
+SLECT nama, harga, getStatus(harga) AS status FROM barang;
