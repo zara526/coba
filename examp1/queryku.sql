@@ -84,7 +84,8 @@ CREATE VIEW VJoin AS SELECT barang.kode_brg, barang.nama, penjualan.id_pem, penj
  -- TRIGGER
  -- ketika ada data yang diinsertkan ke tabel penjualan maka stok pada tabel barang akan berkurang
  
- CREATE DEFINER=`root`@`localhost` TRIGGER `beli` AFTER INSERT ON `penjualan` FOR EACH ROW BEGIN UPDATE barang SET stok = stok - NEW.jml_beli WHERE kode_brg = NEW.kode_brg; END
+CREATE DEFINER=`root`@`localhost` TRIGGER `beli` AFTER INSERT ON `penjualan` FOR EACH ROW BEGIN UPDATE barang SET stok = stok - NEW.jml_beli WHERE kode_brg = NEW.kode_brg; END
+
 CREATE DEFINER=`root`@`localhost` TRIGGER `delete-barang` AFTER DELETE ON `barang` FOR EACH ROW BEGIN DELETE FROM penjualan WHERE kode_brg = old.kode_brg; END
 
 -- STORED PROCEDURE
@@ -101,3 +102,4 @@ CREATE FUNCTION getStatus ( harga float(10.2) ) RETURNS VARCHAR(10) DETERMINISTI
 
 --sintaks untuk memanggil
 SLECT nama, harga, getStatus(harga) AS status FROM barang;
+=======
